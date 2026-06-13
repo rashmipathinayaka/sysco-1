@@ -2,18 +2,17 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
-                echo 'Checking out code'
+                git branch: 'dev',
+                url: 'https://github.com/YOUR-REPO.git'
             }
         }
 
-        stage('Build') {
+        stage('SonarQube Test') {
             steps {
-                echo 'Build successful'
+                echo 'SonarQube integration will go here'
             }
         }
-
     }
 }
