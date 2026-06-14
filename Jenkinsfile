@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'dev',
-                url: 'https://github.com/YOUR-REPO.git'
+                url: 'https://github.com/rashmipathinayaka/sysco-1'
             }
         }
 
