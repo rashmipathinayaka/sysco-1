@@ -48,7 +48,9 @@ pipeline {
         stage('Create Artifact') {
             steps {
                 sh '''
-                zip -r ${ARTIFACT_NAME} .
+                zip -r ${ARTIFACT_NAME} . \
+                -x ".git/*" \
+                -x ".scannerwork/*"
                 '''
             }
         }
