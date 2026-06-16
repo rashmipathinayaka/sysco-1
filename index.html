@@ -4,29 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Page</title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            margin-top: 120px;
-            background-color: #f7f7ff;
+            margin: 0;
+            height: 100vh;
+
+            /* Soft gradient background */
+            background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            max-width: 400px;
         }
 
         h1 {
-            color: #2c3e50;
+            color: #4a3f8c;
+            margin-bottom: 10px;
         }
 
         p {
             color: #555;
             font-size: 18px;
+            line-height: 1.5;
         }
 
-        .box {
-            background: white;
-            display: inline-block;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        .highlight {
+            color: #d63384;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -35,7 +50,7 @@
     <div class="box">
         <h1>Hi SRE Team 👋</h1>
         <p>It’s nice to meet you all!</p>
-        <p>Let's play another foosball round. 💖</p>
+        <p class="highlight">Let’s play another foosball round ⚽💖</p>
     </div>
 </body>
 </html>
