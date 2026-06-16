@@ -21,12 +21,16 @@ pipeline {
 
         stage('SonarQube Scan') {
             steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh """
-                    sonar-scanner \
-                    -Dsonar.projectKey=assignment-1 \
-                    -Dsonar.sources=.
-                    """
+                script {
+                    def scannerHome = tool 'sonar-scanner'
+
+                    withSonarQubeEnv('SonarQube') {
+                        sh """
+                        ${scannerHome}/bin/sonar-scanner \
+                        -Dsonar.projectKey=assignment-1 \
+                        -Dsonar.sources=.
+                        """
+                    }
                 }
             }
         }
