@@ -28,7 +28,9 @@ pipeline {
                         sh """
                         ${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=assignment-1 \
-                        -Dsonar.sources=.
+                        -Dsonar.sources=. \
+                        -Dsonar.inclusions=**/*.html \
+                        -Dsonar.exclusions=**/*.js,**/*.css,**/*.ts
                         """
                     }
                 }
