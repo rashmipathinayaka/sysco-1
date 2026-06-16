@@ -20,6 +20,7 @@ pipeline {
             }
         }
 
+
         stage('SonarQube Scan') {
             steps {
                 withSonarQubeEnv('SonarQube') {
@@ -32,7 +33,7 @@ pipeline {
                 }
             }
         }
-        
+
 
         stage('Quality Gate') {
             steps {
