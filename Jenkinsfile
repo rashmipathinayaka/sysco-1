@@ -1,9 +1,7 @@
 pipeline {
     agent any
 
-    tools {
-        sonarScanner  'sonarScanner'
-    }
+   
 
     environment {
         S3_BUCKET = 'r-assign-1-508563139089-us-east-1-an'
@@ -24,16 +22,14 @@ pipeline {
         stage('SonarQube Scan') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh '''
+                    sh """
                     sonar-scanner \
                     -Dsonar.projectKey=assignment-1 \
-                    -Dsonar.projectName=assignment-1 \
                     -Dsonar.sources=.
-                    '''
+                    """
                 }
             }
         }
-
 
         stage('Quality Gate') {
             steps {
