@@ -23,7 +23,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     sh """
-                    sonar-scanner \
+                    sonarScanner \
                     -Dsonar.projectKey=assignment-1 \
                     -Dsonar.sources=.
                     """
