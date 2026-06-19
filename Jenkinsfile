@@ -2,7 +2,6 @@ pipeline {
     agent any
 
    
-
     environment {
         S3_BUCKET = 'r-assign-1-508563139089-us-east-1-an'
         APACHE_SERVER = '54.196.230.222'
@@ -17,6 +16,7 @@ pipeline {
                     url: 'https://github.com/rashmipathinayaka/sysco-1.git'
             }
         }
+
 
 
         stage('SonarQube Scan') {
